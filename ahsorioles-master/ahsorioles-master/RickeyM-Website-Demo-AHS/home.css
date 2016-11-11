@@ -309,18 +309,45 @@ ul, ol {
 	background-size: cover;
 	-o-background-size: cover;
 }
-#staff .staff-body {
-	display: table-cell;
-	vertical-align: middle;
+#staff{
+    background: #111;
+    padding: 40px 0;
 }
-#staff .staff-body H1 {
-	font-size: 76px;
-	font-weight: 700;
-	color: rgba(255,255,255,0.8);
-	text-transform: uppercase;
+
+#staff .staff-text {
+	margin-left: 10px;
+    color: #ccc;
 }
-#staff .staff-body .styled-heading {
-    color: #333;
-	text-shadow: 0 4px #111;
+#staff H2 {
+    color: #ccc;
 }
-#staff .staff-body .staff-text {
+#staff H4 {
+	font-size: 20px;
+    color: #ccc;
+}
+#staff li {
+	margin-bottom: 3px;
+	list-style: none;
+	padding: 0;
+	font-size: 13px;;
+}
+#staff li:before {
+	content: "|";
+	font-weight: 600;
+	padding-right: 8px;
+	color: #e75926;
+}
+#staff i.fa {
+	float: left;
+	display: block;
+	margin-right: 15px;
+	color: #fff;
+	font-size: 44px;
+	text-shadow: 0 0 1px #666;
+}
+#staff img {
+	margin-top: 20px;
+}
+#staff p {
+	margin-top: 20px;
+}
