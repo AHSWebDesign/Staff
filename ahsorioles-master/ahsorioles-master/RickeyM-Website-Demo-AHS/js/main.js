@@ -11,30 +11,30 @@ function main() {
 	$(function () {
 		$(window).scroll(function () {
             // set distance user needs to scroll before fadeIn on navbar
-			if ($(this).scrollTop() > 250) {
-				$('.navbar').fadeIn();
+			if ($(this).scrollTop() > 150) {
+        $(".navbar").removeClass("navbar-custom-faded");
 			} else {
-				$('.navbar').fadeOut();
+				$(".navbar").addClass("navbar-custom-faded");
 			}
 		});
 
 	
 	});
 	
+	$('.carousel').carousel({
+  interval: 0
+  })
+	
 	// Preloader */
 	  	$(window).load(function() {
 
-   	// will first fade out the loading animation
-    	$("#status").fadeOut("slow");
-
-    	// will fade out the whole DIV that covers the website.
-    	$("#preloader").delay(500).fadeOut("slow").remove();
+   
 
   	})
 
   $(document).ready(function(){
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
+    // Add smooth scrolling to all links with class sc
+    $(".sc").on('click', function(event) {
   
       // Make sure this.hash has a value before overriding default behavior
       if (this.hash !== "") {
@@ -48,16 +48,16 @@ function main() {
         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
         $('html, body').animate({
           scrollTop: $(hash).offset().top
-        }, 800, function(){
+        }, 700, function(){
      
           // Add hash (#) to URL when done scrolling (default click behavior)
           window.location.hash = hash;
         });
-      } // End if
+      }
     });
   });
 
-    // Show Menu on Book
+    // Show Menu on Nav
     $(window).bind('scroll', function() {
         var navHeight = $(window).height() - 100;
         if ($(window).scrollTop() > navHeight) {
@@ -68,9 +68,37 @@ function main() {
     });
 
     $('body').scrollspy({
-        target: '.navbar-default',
+        target: '#navbar',
         offset: 80
     })
+    
+      	// Portfolio Isotope Filter
+    $(window).load(function() {
+        var $container = $('.staff-items');
+        $container.isotope({
+            filter: '*',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        $('.cat a').click(function() {
+            $('.cat .active').removeClass('active');
+            $(this).addClass('active');
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+            return false;
+        });
+
+    });
 }());
 
 
