@@ -91,7 +91,7 @@
         , zIndex: -999999
       }
     , img: {
-          position: 'absolute'
+          position: 'fixed'
         , display: 'none'
         , margin: 0
         , padding: 0
