@@ -5,7 +5,24 @@ body, html {
     color: #eee;
     width: 100% !important;
     height: 100% !important;
-    position: relative;
+    position: absolute;
+    background-color: #111;
+}
+.styled-heading {
+    color: #f05b22;
+    
+    font-size: 130%;
+}
+@media only screen and (min-device-width: 480px){
+    
+}
+.container {
+	position: relative;
+	margin: 0 auto;
+	-webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .tb{
   background: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0));
@@ -39,14 +56,14 @@ body, html {
 
     /* Width and Height of card */
     .card .front, .back {
-        width: 240px;
-        height: 320px;
+        width: 100%;
+        height: 100%;
     }
 
     .back {
         top: 0;
         position: absolute;
-        height: 318px;
+        height: 100%;
     }
 
     /* flip speed goes here */
@@ -141,14 +158,13 @@ ul, ol {
     vertical-align: middle;
 }
 #intro .intro-body H1 {
-    font-size: 76px;
     font-weight: 700;
     color: rgba(255,255,255,0.8);
     text-transform: uppercase;
 }
 #intro .intro-body .styled-heading {
     color: #f05b22;
-    text-shadow: 4px 6px rgba(0,0,0,0.4);
+    
 }
 #intro .intro-body .intro-text {
     font-size: 18px;
@@ -216,45 +232,218 @@ ul, ol {
 #athletics {
     display: table;
     width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
+    padding: 0;
     color: #fff;
-    background: url("assets/athletics/parallaxAthletics.jpg") no-repeat center center fixed;
+    background: url("assets/home/stadium.jpg") no-repeat center center fixed;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
-#athletics .body {
-    display: table-cell;
-    vertical-align: middle;
-}
-#athletics .body H1 {
-    font-size: 76px;
+#athletics H1 {
     font-weight: 700;
     color: rgba(255,255,255,0.8);
     text-transform: uppercase;
 }
-#athletics .body .styled-heading {
-    color: #333;
-    text-shadow: 0 4px #111;
+#athletics .styled-heading {
+    color: #f05b22;
+	text-align: center;
 }
-#athletics .body .text {
+#athletics .container .heading {
+	text-align: center;
+}
+#athletics .text {
     font-size: 18px;
+}
+#athletics #heading {
+    text-align: center;
+    padding:20px;
+}
+
+#filters ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+    text-align: center;
+}
+
+	#filters li {
+		float:left;
+		padding: 5px;
+	}
+	
+	#filters li span {
+		display: block;
+		padding:5px 20px;
+		text-decoration:none;
+		color:#fff;
+		cursor: pointer;
+		transition: 0.4s;
+	}
+	#filters li span:hover:not(.active) {
+		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.4);
+		transition: 0.4s;
+	}
+	
+	#filters li span.active {
+		background: rgba(0,0,0,0.5);
+		color:#fff;
+		transition: 0.4s;
+		box-shadow: 0 4px 6px 0 rgba(0,0,0,0.6);
+	}
+ 
+
+#athletics .container {
+    padding-top: 20px;
+    padding-bottom: 20px
+} 
+
+#portfoliolist .portfolio {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	width:23%;
+	margin:1%;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.9);
+	display:none;
+	float:left;
+	overflow:hidden;
+}
+#portfoliolist .portfolio:hover {
+	box-shadow: 0 4px 6px 0 rgba(0,0,0,0.9);
+	transition: 0.2s;
+}
+
+.portfolio-wrapper {
+	overflow:hidden;
+	position: relative !important;
+	background: rgba(0,0,0,0.40);
+	cursor:pointer;
+}
+
+.portfolio img {
+	max-width:100%;
+	position: relative;
+	top:0;
+-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.portfolio .label {
+	position: absolute;
+	width: 100%;
+	height:30px;
+	bottom:-40px;
+-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.portfolio .text-title {
+	color: #fff	;
+	transition: 0.2s;
+}
+.portfolio .text-title:hover {
+	color: #111	;
+	transition: 0.2s;
+}
+
+.portfolio .label-bg {
+	background: #f05b22;
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+.portfolio .label-text {
+	color:#eee;
+	position: relative;
+	z-index:500;
+	padding:5px 8px;
+}
+	
+.portfolio .text-category {
+	display:block;
+	font-size:9px;
+}
+
+.portfolio:hover .label {
+bottom:0;
+}
+.portfolio:hover img {
+top:-30px;
+}
+
+/* #Tablet (Portrait) */
+@media only screen and (min-width: 960px) {
+	.container {
+		width: 768px;
+	}
+    .styled-heading {
+        text-shadow: 4px 6px rgba(0,0,0,0.4);
+    }
+    h1 {
+    font-weight: 700;
+    font-size: 50px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.container {
+		width: 100%;
+	}
+    .styled-heading {
+        text-shadow: 2px 2px rgba(0,0,0,0.4);
+    }
+    h1 {
+    font-weight: 700;
+    font-size: 40px;
+    }
+    #staff .container {
+        width: 70%;
+    }
+}
+
+/*  #Mobile (Portrait) - Note: Design for a width of 320px */
+@media only screen and (max-width: 767px) {
+	.container {
+		width: 80%;
+	}
+	.styled-heading {
+        text-shadow: 2px 2px rgba(0,0,0,0.4);
+    }
+	#portfoliolist .portfolio {
+		width:48%;
+		margin:1%;
+	}
+    h1 {
+    font-weight: 700;
+    font-size: 20px;
+    }
+}
+
+/* #Mobile (Landscape) - Note: Design for a width of 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.container {
+		width: 70%;
+	}
+    .styled-heading {
+        text-shadow: 2px 2px rgba(0,0,0,0.4);
+    }
+    h1 {
+    font-weight: 700;
+    font-size: 30px;
+    }
 }
 
 /* Activities CSS */
 #activities {
     display: table;
     width: 100%;
-    height: auto;
-    padding: 100px 0;
+    padding: 0;
     text-align: center;
     color: #fff;
     background: url("assets/home/pressbox.jpg") no-repeat center center fixed;
-    background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -265,17 +454,15 @@ ul, ol {
     vertical-align: middle;
 }
 #activities .body H1 {
-    font-size: 76px;
     font-weight: 700;
     color: rgba(255,255,255,0.8);
     text-transform: uppercase;
 }
-#activities .body .styled-heading {
-    color: #333;
-    text-shadow: 0 4px #111;
-}
 #activities .body .text {
     font-size: 18px;
+}
+#activities .w3-content {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.8);
 }
 
 /* Counselors CSS */
@@ -283,41 +470,87 @@ ul, ol {
     display: table;
     width: 100%;
     height: auto;
-    padding: 100px 0;
+    padding: 100px 0px;
     text-align: center;
     color: #fff;
-    background: url("assets/home/bell.JPG") no-repeat center center fixed;
-    background-color: #000;
+    background-color: #111;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
-#counselors .body {
-    display: table-cell;
-    vertical-align: middle;
+#counselors-2 {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url("assets/home/pressbox.jpg") no-repeat center center fixed;
+    background-color: #333;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
-#counselors .body H1 {
-    font-size: 76px;
-    font-weight: 700;
+#counselors .row {
+    width: 100%;
+    font-size: 25%;
+}
+#counselors H1 {
     color: rgba(255,255,255,0.8);
     text-transform: uppercase;
 }
-#counselors .body .styled-heading {
-    color: #333;
-    text-shadow: 0 4px #111;
+#counselor-images {
+    width: 100%;
+    display: inline;
+    text-align: center;
 }
-#counselors .body .text {
+#counselors .btn-default {
+    border: 2px solid #222;
+    color: #eee;
+    background: rgba(0,0,0,0.8);
+    padding: 12px 24px;
+    margin: 0 8px;
     font-size: 18px;
+    transition: all 0.5s;
+}
+#counselors .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
+  color: #fff;
+    background: rgba(0,0,0,.4);
+    border: 2px solid #f05b22;
+}
+.counselors-item {
+	margin-bottom: 30px;
+    margin-right: 1%;
+    height: 100%;
+    width: 220px;
+    max-width: 50%;
+	border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    display: inline-block;
+}
+#counselors-2 img {
+  height: 100%;
+  width: 100%;
+}
+#counselors-2 .counselors-item .hover-bg {
+	height: 100%;
+  width: 100%;
+	overflow: hidden;
+	position: relative;
+	border-radius: 5px;
 }
 
-/* Staff CSS */
+
+/* Staff CSS
 @media only screen and (min-width: 500px) {
     
 }
+*/
 
 #staff {
-    padding: 120px 0;
+    padding: 0;
     background: url("assets/home/gymdoors.jpg") no-repeat center center fixed;
     background-color: #000;
     -webkit-background-size: cover;
@@ -325,62 +558,77 @@ ul, ol {
     background-size: cover;
     -o-background-size: cover;
 }
+#staff .container {
+    
+}
 #staff H1 {
-    font-size: 76px;
     font-weight: 700;
     color: rgba(255,255,255,0.8);
     text-transform: uppercase;
 }
 #staff .styled-heading {
-    color: #333;
-    text-shadow: 0 4px #111;
+    color: #f05b22;
 }
 #staff .text {
     font-size: 18px;
 }
 
+#staff p {
+  color: #eee;
+}
+#heading {
+    background-color: #101010; !important
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6); !important
+}
+
 .stafflist {
-    background-color: rgba(10,10,10,0.7);
-    padding: 20px;
+    padding: 0px;
     color: #fff;
 }
+.text-center {
+    padding: 20px;
+}
+
 .categories {
-	padding-bottom: 30px;
+	padding: 20px;
 }
 ul.cat li {
 	display: inline-block;
-    text-align: center;
 }
 ol.type li {
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 0;
     transition: 0.6s;
+    margin-bottom: 12px;
 }
 ol.type li a {
 	color: #eee;
-	padding: 8px 20px;
-	border: 1px solid #eee;
-	border-radius: 2px;
-    background: rgba(0,0,0,0.44);
+	padding: 6px 12px;
+	border: 0;
+	border-radius: 0px;
     transition: 0.6s;
     cursor: pointer;
+  transition: 0.6s;
 }
 
 ol.type .item {
 	float:left;
 }
 
-ol.type li a.active {
-	color: #f6f6f6;
-	border: 1px solid #f05b22;
-	background: #f05b22;
-    transition: 0.6s;
+ol.type li a.active:not(.hover) {
+	background: rgba(0,0,0,0.5);
+    color:#fff;
+    transition: 0.4s;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.6);
+    border-radius: 0px;
 }
 ol.type li a:hover {
 	color: #f6f6f6;
-	border: 1px solid #f05b22;
-	background: #f05b22;
-    transition: 0.6s;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.4);
+  transition: 0.2s;
+
+  border-radius: 0px;
+    margin-bottom: 0px;
 }
 .isotope-item {
 	z-index: 2
@@ -414,13 +662,21 @@ ol.type li a:hover {
 	transition-property: transform, opacity;
 }
 .staff-item {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
+    margin-top: 15px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+}
+.staff-item img {
+  height: 220px;
+  width: 200px;
 }
 .staff-item .hover-bg {
-	max-height: 180px;
-    max-width: 360px;
+    height: 220px;
+    width: 200px;
 	overflow: hidden;
 	position: relative;
+	border-radius: 5px;
 }
 .hover-bg .hover-text {
 	position: absolute;
@@ -428,7 +684,7 @@ ol.type li a:hover {
 	margin: 0 auto;
 	color: rgba(255,255,255,0.6);
 	background: rgba(0, 0, 0, 0.66);
-	padding: 25% 0;
+	padding: 10%;
 	height: 100%;
 	width: 100%;
 	opacity: 0;
@@ -474,14 +730,33 @@ ol.type li a:hover {
 .hover-bg:hover .hover-text {
 	opacity: 1;
 }
+@media only screen and (min-width: 640px) {
+    .staff-item .hover-bg {
+        height: 45%;
+        width: 100%;
+    }
+    .staff-item img {
+        height: 100%;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .staff-item .hover-bg {
+        height: 45%;
+        width: 100%;
+    }
+    .staff-item img {
+        height: 100%;
+        width: 100%;
+    }
+}
 
 /* General Info CSS */
 #info {
-    padding: 40px 0;
     background: #111;
+    padding: 20px;
 }
 #info .text {
-    margin-left: 5px;
     color: #bbb;
 }
 #info H3 {
@@ -505,7 +780,6 @@ ol.type li a:hover {
     color: #e75926;
 }
 #info i.fa {
-    float: left;
     display: block;
     margin-right: 15px;
     color: #fff;
@@ -517,4 +791,92 @@ ol.type li a:hover {
 }
 #info p {
     margin-top: 20px;
+}
+#info .btn{
+    background: #111;
+    border-color: #111;
+    border-radius: 0px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    transition: 0.6s;
+}
+#info .btn:after {
+    font-family: "Glyphicons Halflings";
+	content: "\2212";
+    float: right;
+    margin-left: 15px;
+    transition: 0.6s;
+  }
+#info .btn:active {
+    outline: none;
+    border: none;
+}
+#info .btn.collapsed:after {
+    content: "\2b";
+    transition: 0.6s;
+    outline: none;
+    border: none;
+  }
+#info .container {
+	background: #111;
+	margin-top: 0px;
+}
+#info .collapse {
+    padding-top: 5px;
+    transition: 0.6s;
+}
+#info .info-column {
+	color:#ccc;
+	margin-top: 0px;
+	padding: 10px;
+    background: #111;
+    display: table-row-group;
+}
+#info .li {
+	padding:65px;
+}
+#info a{
+	color:#ccc;
+}
+#info a:hover{
+	color:#f05b22;
+}
+@media only screen and (min-width: 980px) {
+    #info .info-column {
+        float:left;
+    }
+    #info .info-content {
+        text-align: center;
+    }
+}
+/* #Clearing */
+
+/* Self Clearing Goodness */
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+.row:after,
+.clearfix:after {
+  clear: both; }
+.row,
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
