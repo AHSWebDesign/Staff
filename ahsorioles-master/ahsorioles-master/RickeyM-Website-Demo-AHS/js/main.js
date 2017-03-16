@@ -71,12 +71,11 @@ function main() {
         target: '#navbar',
         offset: 80
     })
-    
-      	// Portfolio Isotope Filter
+// Portfolio Isotope Filter
     $(window).load(function() {
         var $container = $('.staff-items');
         $container.isotope({
-            filter: '*',
+            filter: '.l',
             animationOptions: {
                 duration: 750,
                 easing: 'linear',
@@ -100,7 +99,6 @@ function main() {
 
     });
 }());
-
 
 }
 main();
