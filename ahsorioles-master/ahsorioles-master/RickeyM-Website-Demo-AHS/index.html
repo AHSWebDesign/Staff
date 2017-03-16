@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Staff page</title>
+    <title>AHS Orioles</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -26,9 +26,19 @@
     <script src="js/jquery.backstretch.js"></script>
     <script src="js/jquery.backstretch.min.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
     
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="1067726743553-h8b990ac52veqoddhaesub255to3u3q5.apps.googleusercontent.com">
+    
+    <!--W3-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <style>
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+    </style>
 
   
     <!-- Stylesheet -->
@@ -46,6 +56,34 @@
     console.log('Email: ' + profile.getEmail());
     }
   </script>
+  <script type="text/javascript">
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixItUp({
+  				selectors: {
+    			  target: '.portfolio',
+    			  filter: '.filter'
+    		  },
+    		  load: {
+      		  filter: '.spring'
+      		}
+				});
+			
+			}
+
+		};
+		
+		filterList.init();
+		
+		
+	});
+	</script>
 </head>
 <body data-spy="scroll" data-target="#navbar">
 <!-- Navigation -->
@@ -73,7 +111,7 @@
 <div id="intro" style="height:100%;">
     <script>
     //Slideshow
-        $.backstretch([
+        $("#intro").backstretch([
             "assets/home/stadium.jpg",
             "assets/home/pressbox.jpg",
             "assets/home/bell.jpg",
@@ -84,7 +122,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                 <h1><span class="styled-heading">The Staff of AHS</span></h1>
+                 <h1><span class="styled-heading">Augusta High School</span></h1>
                     <br>
                 <a href="#events" class="btn btn-default page-scroll sc">Learn More</a> </div>
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -130,162 +168,302 @@
 </div>
   
 <!-- Athletics -->
-<div id="athletics" style="height:100%;background-color:rgba(0,0,0,0.7);">
-    <div class="body tb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <h1><span class="styled-heading">COMING SOON</span></h1>
-                </div>
-            </div>
+<!-- Athletics -->
+<div id="athletics" style="background-color:rgba(0,0,0,0.7);">
+    <div id="heading">
+    	<div class="text-center">	
+            <h1><span class="styled-heading">Athletics</span></h1>
+        </div>
+        <div class="filterlist text-center">
+            <ul id="filters" class="clearfix">
+                <li><span class="filter active" data-filter=".spring, .summer, .fall, .winter">All</span></li>
+                <li><span class="filter" data-filter=".spring">Spring</span></li>
+                <li><span class="filter" data-filter=".summer">Summer</span></li>
+                <li><span class="filter" data-filter=".fall">Fall</span></li>
+                <li><span class="filter" data-filter=".winter">Winter</span></li>
+            </ul>
         </div>
     </div>
-</div>
-
-<!-- Divider Section (Intro) -->
-<div class="pDivider">
     <div class="container">
-      <div class="section-title text-center center">
-        <h2>Events</h2>
-        <hr>
-      </div>
-        <div class="row">
-            
-        </div>
+         <div id="portfoliolist">
+         
+              <div class="portfolio spring" data-cat="spring">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/bbField.png" alt="" />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Spring Sport</a>
+                      <span class="text-category">Baseball</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="portfolio winter" data-cat="winter">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/gym.png" alt=""  />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Winter Sport</a>
+                      <span class="text-category">Basketball</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="portfolio spring fall" data-cat="spring fall">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/TennisCourtDronePhoto.png" alt="" />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Spring Sport</a>
+                     <a class="text-title">Fall Sport</a>
+                      <span class="text-category">Tennis</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="portfolio spring" data-cat="spring">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/Finished Track Overtop.png" alt="" />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Springs Sport</a>
+                      <span class="text-category">Track and Field</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="portfolio winter" data-cat="winter">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/DSC05510.JPG"ss alt="" />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Winter Sport</a>
+                      <span class="text-category">Bowling</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="portfolio fall" data-cat="fall">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/IMG_0019.JPG" alt="" />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Fall Sport</a>
+                      <a class="text-title">Spring Sport</a>
+                      <span class="text-category">Golf</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="portfolio winter" data-cat="winter">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/wrestling.jpg" alt="" />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Winter Sport</a>
+                      <span class="text-category">Wrestling</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="portfolio spring" data-cat="spring">
+                <div class="portfolio-wrapper">
+                  <img src="assets/athletics/IMG_0030.JPG" alt="" />
+                  <div class="label">
+                    <div class="label-text">
+                      <a class="text-title">Spring Sport</a>
+                      <span class="text-category">Softball</span>
+                    </div>
+                    <div class="label-bg"> </div>
+                  </div>
+                </div>
+              </div>
+         </div>
     </div>
-</div>
+    </div>
 
 <!-- Clubs/Activities -->
 <div id="activities" style="height:100%; background-color:rgba(0,0,0,0.7);">
-    <div class="body tb">
+    <div class="body">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <h1><span class="styled-heading">COMING SOON</span></h1>
+                    <h1><span class="styled-heading">Activities</span></h1>
+                    <div class="w3-content w3-display-container" style="max-width:50%px">
+                         <a  href="Activities.html" target="_blank">
+                          <img class="mySlides" src="assets/activities/Art Club resized.png" style="width:100%">
+                          <img class="mySlides" src="assets/activities/Augusta Band 2016 I.png" style="width:100%">
+                          <img class="mySlides" src="assets/activities/Robotics.png" style="width:100%">
+                          </a>
+                          <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                            <div class="w3-left w3-padding-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                            <div class="w3-right w3-padding-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                            </div>
+                          </div>
+
+
+
+
+                        <script>
+                        var myIndex = 0;
+                        carousel();
+
+                        function carousel() {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                          for (i = 0; i < x.length; i++) {
+                             x[i].style.display = "none";
+                          }
+                            myIndex++;
+                            if (myIndex > x.length) {myIndex = 1}
+                            x[myIndex-1].style.display = "block";
+                            setTimeout(carousel, 5000); // Change image every 2 seconds
+                        }
+                        </script>
+
+
+                        <script>
+                        var slideIndex = 1;
+                        showDivs(slideIndex);
+
+                        function plusDivs(n) {
+                          showDivs(slideIndex += n);
+                        }
+
+                        function currentDiv(n) {
+                          showDivs(slideIndex = n);
+                        }
+
+                        function showDivs(n) {
+                          var i;
+                          var x = document.getElementsByClassName("mySlides");
+                          var dots = document.getElementsByClassName("demo");
+                          if (n > x.length) {slideIndex = 1}
+                          if (n < 1) {slideIndex = x.length}
+                          for (i = 0; i < x.length; i++) {
+                             x[i].style.display = "none";
+                          }
+                          for (i = 0; i < dots.length; i++) {
+                             dots[i].className = dots[i].className.replace(" w3-white", "");
+                          }
+                          x[slideIndex-1].style.display = "block";
+                          dots[slideIndex-1].className += " w3-white";
+                        }
+
+                        </script>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<!-- Divider Section (Clubs) -->
-<div class="pDivider">
-    <div class="container">
-      <div class="section-title text-center center">
-        <h2>Events</h2>
-        <hr>
-      </div>
-        <div class="row">
-            
         </div>
     </div>
 </div>
 
 <!-- Counselors -->
-<div id="counselors" style="height:100%;">
-    <div class="counselors-body">
+<div id="counselors" style="height:25%;">
+    <div class="body">
         <div class="container">
-      <div class="row">
-      <div class="section-title text-center center">
-        <h2>Counselors</h2>
-       <br>
-          <h7>More</h7>
-        <hr>
-      </div>
-        <div class="row">
-            <div class="col-md-4"> </div>
-            <br>
-                    <div id="And" align="center">
-                    <div class="card" ontouchstart="this.classList.toggle('hover')">
-                        <div class="flipper">
-                            <div class="front text-center col-md-12">
-                                <img src="assets/staff/TRACYANDERSON.jpg" alt="Avatar" style="width:100%; height:75%;">
-                              <h4><strong>Tracy Anderson</strong></h4>
-                                <p>Counselor</p>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                 <h1><span class="styled-heading">Counselors</span></h1>
+                    <br>
+                <a href="#counselors" class="btn btn-default page-scroll sc">More</a> </div>
+                    <br>
+            </div>
+		</div>
+       </div>
+       </div>
+<div id="counselors-2" style="height:25%;">
+    <div class="body">
+        <div class="container">
+            <div id="counselor-images" class="row center">
+                <div class="counselors-item">
+                    <div class="hover-bg">
+                        <a href="">
+                            <div class="hover-text">
+                                <h4>Elizabeth Hamblin</h4>
+                                <p>Freshmen and <br>
+                                Junior Counselor<br> <br>
+                                Coordinates all testing <br>
+                                State testing, ASVAB, and ASSET testing <br><br>
+                                Enrollment and scheduling</p>
                             </div>
-                            <div class="back text-center">
-                              <h4><strong>Information</strong></h4>
-                              <p>Info</p>
-                            </div>
-                        </div>
+                            <img src="assets/staff/ELIZABETHHAMBLIN.jpg" class="img-responsive" alt="Elizabeth Hamblin">
+                        </a>
                     </div>
-                    </div>
-                    <div id="Vid" align="center">
-                   <!-- <video  width="550" height="350" controls >
-  <source src="assets/counselors/Enrollment.mp4" type="video/mp4">
-  <source src="assets/counselors/movie.ogg" type="video/ogg">
-</video>-->
-</div>
-                    <div id="Hamm" align="center">
-                    <div class="card" ontouchstart="this.classList.toggle('hover')" >
-                                <div class="flipper">
-                                <div class="front text-center col-md-12">
-                                <img src="assets/staff/ELIZABETHHAMBLIN.jpg" alt="Avatar" style="width:100%; height:75%;">
-                              <h4><strong>Elizabeth Hamblin</strong></h4>
-                                <p>Counselor</p>
+                </div>
+            <!--Needed-->
+                <div class="counselors-item">
+                    <div class="hover-bg">
+                        <a href="">
+                            <div class="hover-text">
+                                <h4>Tracy Anderson</h4>
+                                <p>Sophomore and <br>
+                                Senior Counselor<br> <br>
+                                Schedules college visits <br><br>
+                                Coordinates local and<br>
+                                 community scholarships</p>
+                                <p>&nbsp;</p>
                             </div>
-                            <div class="back text-center">
-                              <h4><strong>Information</strong></h4>
-                              <p>Info</p>
+                            <img src="assets/staff/TRACYANDERSON.jpg" class="img-responsive" alt="Tracy Anderson">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
-        </div>
-</div>
-<br>
-      <a target="_blank" title="follow the counselors on twitter!" href="https://twitter.com/ahs_counselors"><img alt="follow the counselors on twitter!" src="assets/counselors/twitter_40x40.png" border="0"></a>
-</div>
-</div>
-</div>
-
-<!-- Divider Section (Counselors) -->
-<div class="pDivider">
-    <div class="container">
-      <div class="section-title text-center center">
-        <h2>Events</h2>
-        <hr>
-      </div>
-        <div class="row">
-              
-        </div>
-    </div>
-</div>
+		</div>
+       </div>
+       </div>
 
 <!-- Staff -->
 <div id="staff">
-    <div class="container" style="height:100%;">
-        <div class="text-center">
-            <h1><span class="styled-heading">Staff</span></h1>
-        </div>
-        <div class="stafflist">
-            <div class="section-title text-center center">
-                <p>Select a department of education to narrow down the list</p>
-                <br>
-                <div class="categories">
-                  <ul class="cat">
-                    <li>
-                      <ol class="type">
-                        <li><a class="item active" data-filter="*">All</a></li>
-                        <li><a class="item" data-filter=".math">Mathematics</a></li>
-                        <li><a class="item" data-filter=".history">Social Studies</a></li>
-                        <li><a class="item" data-filter=".english">English</a></li>
-                        <li><a class="item" data-filter=".science">Science</a></li>
-                        <li><a class="item" data-filter=".staff">Staff and Support</a></li>
-                        <li><a class="item" data-filter=".art">Art</a></li>
-                        <li><a class="item" data-filter=".business">Business</a></li>
-                        <li><a class="item" data-filter=".music">Music</a></li>
-                        <li><a class="item" data-filter=".tech">Technology</a></li>
-                        <li><a class="item" data-filter=".se">Special Education</a></li>
-                        <li><a class="item" data-filter=".pe">Physical Education</a></li>
-			<li><a class="item" data-filter=".sports">Sports</a></li>
-			 <li><a class="item" data-filter=".1">Hide All</a></li>
-                      </ol>
-                    </li>
-                  </ul>
+        <div id="heading">
+            <div class="text-center">
+                <h1><span class="styled-heading">Staff</span></h1>
+            </div>
+            <div class="stafflist">
+                <div class="section-title text-center center">
+                    <p>Select a department of education to narrow down the list</p>
+                    <br>
+                    <div class="categories">
+                      <ul class="cat">
+                        <li>
+                          <ol class="type">
+                            <li><a class="item" data-filter="*">All</a></li>
+                            <li><a class="item" data-filter=".math">Mathematics</a></li>
+                            <li><a class="item" data-filter=".history">Social Studies</a></li>
+                            <li><a class="item" data-filter=".english">English</a></li>
+                            <li><a class="item" data-filter=".science">Science</a></li>
+                            <li><a class="item" data-filter=".staff">Staff and Support</a></li>
+                            <li><a class="item" data-filter=".art">Art</a></li>
+                            <li><a class="item" data-filter=".business">Business</a></li>
+                            <li><a class="item" data-filter=".music">Music</a></li>
+                            <li><a class="item" data-filter=".tech">Technology</a></li>
+                            <li><a class="item" data-filter=".se">Special Education</a></li>
+                            <li><a class="item" data-filter=".pe">Physical Education</a></li>
+                            <li><a class="item" data-filter=".fl">Foreign Language</a></li>
+                <li><a class="item" data-filter=".sports">Sports</a></li>
+                              <li><a class="item" data-filter=".facs">FACS</a></li>
+                 <li><a class="item active" data-filter=".1">Hide All</a></li>
+                          </ol>
+                        </li>
+                      </ul>
+                    </div>
                 </div>
             </div>
-          
+        </div>
+       <div class="container" style="height:100%;">   
             <div class="row">
               <div class="staff-items">
 
@@ -303,7 +481,7 @@
                   </div>
                 </div>
 		      
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 english staff">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 english">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -317,13 +495,13 @@
                   </div>
                 </div>
 		      
-               <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 math">
+               <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 math sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Caitlin Bauer</h4>
-                            <p>Math</p>
+                            <p>Math / Assistant Volleyball Coach</p>
                           </div>
                           <img src="assets/staff/CAITLINBAUER.jpg" class="img-responsive" alt="Caitlin Bauer">
                         </a>
@@ -345,13 +523,13 @@
                   </div>
                 </div>
 
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 art">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 art sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Charles Bishop</h4>
-                            <p>Art</p>
+                            <p>Art / Assistant Wrestling Coach</p>
                           </div>
                           <img src="assets/staff/CHARLESBISHOP.jpg" class="img-responsive" alt="Charles Bishop">
                         </a>
@@ -359,13 +537,13 @@
                   </div>
                 </div>
 
-		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 staff">
+		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Rich Bishop</h4>
-                            <p>Special Ed Para</p>
+                            <p>Special Education Para</p>
                           </div>
                           <img src="assets/staff/RICHARDBISHOP.jpg" class="img-responsive" alt="Rich Bishop">
                         </a>
@@ -393,7 +571,7 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Tricia Brown</h4>
-                            <p>Athletic Department Administrative Assistant</p>
+                            <p>Athletic Department / Administrative Assistant</p>
                           </div>
                           <img src="assets/staff/TRICIABROWN.jpg" class="img-responsive" alt="Tricia Brown">
                         </a>
@@ -409,7 +587,7 @@
                             <h4>Dusty Buell</h4>
                             <p>Boy's soccer coach</p>
                           </div>
-                          <img src="assets/staff/DUSTYBUELL.jpg" class="img-responsive" alt="Dusty Buell">
+                          <img src="assets/staff/oriole.png" class="img-responsive" alt="Dusty Buell">
                         </a>
                     </div>
                   </div>
@@ -451,7 +629,7 @@
                             <h4>Katherine Cox</h4>
                             <p>District ESOL Para-Educator</p>
                           </div>
-                          <img src="assets/staff/KATHERINECOX.jpg" class="img-responsive" alt="Katherine Cox">
+                          <img src="assets/staff/oriole.png" class="img-responsive" alt="Katherine Cox">
                         </a>
                     </div>
                   </div>
@@ -470,9 +648,8 @@
                     </div>
                   </div>
                 </div>
-                  
-    <div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 spanish">
+                
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 fl">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -485,30 +662,27 @@
                     </div>
                   </div>
              </div>
-        </div>
-                  <div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 spanish">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 pe sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Jason Filbeck</h4>
-                            <p>Physical Education</p>
+                            <p>Physical Education / Football Coach</p>
                           </div>
                           <img src="assets/staff/JASONFILBECK.jpg" class="img-responsive" alt="Frank Espinoza">
                         </a>
                     </div>
                   </div>
              </div>
-        </div>
 		      
-	     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 history">
+	     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 history sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Brad Gober</h4>
-                            <p>Social Studies</p>
+                            <p>Social Studies / Assistant Football Coach</p>
                           </div>
                           <img src="assets/staff/BRADGOBER.jpg" class="img-responsive" alt="Brad Gober">
                         </a>
@@ -530,13 +704,13 @@
                   </div>
                 </div>
 		      
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Brian Hallmark</h4>
-                            <p>Science</p>
+                            <p>Science / Volleyball Coach</p>
                           </div>
                           <img src="assets/staff/BRIANHALLMARK.jpg" class="img-responsive" alt="Brian Hallmark">
                         </a>
@@ -558,13 +732,13 @@
                   </div>
                 </div>
 		      
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>J.D. Hand</h4>
-                            <p>Science</p>
+                            <p>Science / Assistant Football, Wrestling, and Baseball Coach</p>
                           </div>
                           <img src="assets/staff/J.D.HAND.jpg" class="img-responsive" alt="J.D. Hand">
                         </a>
@@ -586,13 +760,13 @@
                   </div>
                 </div>
                   
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 english">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 english sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Meriel Hartling</h4>
-                            <p>English</p>
+                            <p>English / Assistant Track Coach</p>
                           </div>
                           <img src="assets/staff/MERIELHARTLING.jpg" class="img-responsive" alt="Meriel Hartling">
                         </a>
@@ -628,13 +802,13 @@
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 math">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 math sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Tyler Hinkle</h4>
-                            <p>Math</p>
+                            <p>Math / Assistant Baseball Coach</p>
                           </div>
                           <img src="assets/staff/TYLERHINKLE.jpg" class="img-responsive" alt="Tyler Hinkle">
                         </a>
@@ -648,9 +822,23 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Todd Hollis</h4>
-                            <p>Music</p>
+                            <p>Instrumental Music</p>
                           </div>
                           <img src="assets/staff/TODDHOLLIS.jpg" class="img-responsive" alt="Todd Hollis">
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                  
+                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
+                  <div class="staff-item">
+                    <div class="hover-bg">
+                        <a href="#staff">
+                          <div class="hover-text">
+                            <h4>Chelsea Hoshaw</h4>
+                            <p>Special Education Para</p>
+                          </div>
+                          <img src="assets/staff/oriole.png" class="img-responsive" alt="Chelsea Hoshaw">
                         </a>
                     </div>
                   </div>
@@ -670,13 +858,13 @@
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 history">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 history sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Doug Jefferson</h4>
-                            <p>Social Studies</p>
+                            <p>Social Studies / Baseball Coach</p>
                           </div>
                           <img src="assets/staff/DOUGJEFFERSON.jpg" class="img-responsive" alt="Doug Jefferson">
                         </a>
@@ -732,9 +920,23 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Tim Laner</h4>
-                            <p>English</p>
+                            <p>English / Drama / Forensics</p>
                           </div>
                           <img src="assets/staff/TIMLANER.jpg" class="img-responsive" alt="Tim Laner">
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                  
+                   <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
+                  <div class="staff-item">
+                    <div class="hover-bg">
+                        <a href="#staff">
+                          <div class="hover-text">
+                            <h4>Jennie Lary</h4>
+                            <p>Special Education Para</p>
+                          </div>
+                          <img src="assets/staff/JENNIELARY.jpg" class="img-responsive" alt="Jennie Lary">
                         </a>
                     </div>
                   </div>
@@ -754,7 +956,7 @@
                   </div>
                 </div>
                   
-		       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 staff">
+		       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -768,13 +970,13 @@
                   </div>
                 </div>
 		      
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science sports">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science sports pe">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>TJ Meyer</h4>
-                            <p>Heatlh Science / Coach</p>
+                            <p>Heatlh Science / Assistant Basketball Coach</p>
                           </div>
                           <img src="assets/staff/TJMEYER.jpg" class="img-responsive" alt="TJ Meyer">
                         </a>
@@ -788,7 +990,7 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Ryan L. Muhlig</h4>
-                            <p>Support Staff</p>
+                            <p>Assistant Principal</p>
                           </div>
                           <img src="assets/staff/RYANMUHLIG.jpg" class="img-responsive" alt="Ryan Muhlig">
                         </a>
@@ -796,7 +998,7 @@
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 facs">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -810,7 +1012,7 @@
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 staff">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -858,7 +1060,7 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Jeff Regier</h4>
-                            <p>Social Studies</p>
+                            <p>Social Studies / Drivers Education</p>
                           </div>
                           <img src="assets/staff/JEFFREGIER.jpg" class="img-responsive" alt="Title">
                         </a>
@@ -874,13 +1076,13 @@
                             <h4>Joan Reichardt</h4>
                             <p>Social Studies</p>
                           </div>
-                          <img src="assets/staff/JOANREICHARDT.jpg" class="img-responsive" alt="Joan Reichardt">
+                          <img src="assets/staff/oriole.png" class="img-responsive" alt="Joan Reichardt">
                         </a>
                     </div>
                   </div>
-                </div>                                                                                               
+                </div>
 		      
-		       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 staff">
+		       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -914,7 +1116,7 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Kellee Roberts</h4>
-                            <p>Business / Bowling Coach / Assitant Softball Coach / Computer Tech</p>
+                            <p>Business / Bowling Coach / Assistant Softball Coach</p>
                           </div>
                           <img src="assets/staff/KELLEEROBERTS.jpg" class="img-responsive" alt="Kellee Roberts">
                         </a>
@@ -928,7 +1130,7 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Clint Robinson</h4>
-                            <p>Business and Computer Tech</p>
+                            <p>Business</p>
                           </div>
                           <img src="assets/staff/CLINTROBINSON.jpg" class="img-responsive" alt="Title">
                         </a>
@@ -958,7 +1160,7 @@
                             <h4>Audra Shelite</h4>
                             <p>Art</p>
                           </div>
-                          <img src="assets/staff/AUDRASHELITE.jpg" class="img-responsive" alt="Title">
+                          <img src="assets/staff/AUDRASHELITE.jpg" class="img-responsive" alt="Audra Shelite">
                         </a>
                     </div>
                   </div>
@@ -970,7 +1172,7 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Rachel Simmons</h4>
-                            <p>Music</p>
+                            <p>Vocal Music</p>
                           </div>
                           <img src="assets/staff/RACHELSIMMONS.jpg" class="img-responsive" alt="Title">
                         </a>
@@ -978,13 +1180,13 @@
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 history">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 history sports">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Jake Sims</h4>
-                            <p>Social Studies</p>
+                            <p>Social Studies / Basketball Coach</p>
                           </div>
                           <img src="assets/staff/JAKESIMS.jpg" class="img-responsive" alt="Title">
                         </a>
@@ -1000,13 +1202,13 @@
                             <h4>Danny Smiley</h4>
                             <p>Athletic Trainer</p>
                           </div>
-                          <img src="assets/staff/DANNYSMILEY.jpg" class="img-responsive" alt="Danny Smiley">
+                          <img src="assets/staff/oriole.png" class="img-responsive" alt="Danny Smiley">
                         </a>
                     </div>
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 staff">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -1042,7 +1244,7 @@
                             <h4>Shane Steinkamp</h4>
                             <p>Head Softball Coach</p>
                           </div>
-                          <img src="assets/staff/SHANESTEINKAMP.jpg" class="img-responsive" alt="Shane Steinkamp">
+                          <img src="assets/staff/Steinkamp.png" class="img-responsive" alt="Shane Steinkamp">
                         </a>
                     </div>
                   </div>
@@ -1062,6 +1264,20 @@
                   </div>
                 </div>
                        
+                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 se">
+                  <div class="staff-item">
+                    <div class="hover-bg">
+                        <a href="#staff">
+                          <div class="hover-text">
+                            <h4>Amber Stillwell</h4>
+                            <p>Special Education Teacher</p>
+                          </div>
+                          <img src="assets/staff/oriole.png" class="img-responsive" alt="Amber Stillwell">
+                        </a>
+                    </div>
+                  </div>
+                </div>  
+                  
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science">
                   <div class="staff-item">
                     <div class="hover-bg">
@@ -1098,7 +1314,7 @@
                             <h4>Joe Tallman</h4>
                             <p>School Pyschologist</p>
                           </div>
-                          <img src="assets/staff/JOETALLMAN.jpg" class="img-responsive" alt="Joe Tallman">
+                          <img src="assets/staff/oriole.png" class="img-responsive" alt="Joe Tallman">
                         </a>
                     </div>
                   </div>
@@ -1112,7 +1328,7 @@
                             <h4>Brandon Terry</h4>
                             <p>Physical Education / Health</p>
                           </div>
-                          <img src="assets/staff/CARRIESPEAR.jpg" class="img-responsive" alt="Brandon Terry">
+                          <img src="assets/staff/BRANDONTERRY.jpg" class="img-responsive" alt="Brandon Terry">
                         </a>
                     </div>
                   </div>
@@ -1132,7 +1348,7 @@
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 spanish">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 fl">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
@@ -1160,13 +1376,13 @@
                   </div>
                 </div>
                        
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 science">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 facs">
                   <div class="staff-item">
                     <div class="hover-bg">
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Jennifer Webster</h4>
-                            <p>Vocational Family / Consumer Science</p>
+                            <p>Family and Consumer Science</p>
                           </div>
                           <img src="assets/staff/JENNIFERWEBSTER.jpg" class="img-responsive" alt="Jennifer Webster">
                         </a>
@@ -1180,7 +1396,7 @@
                         <a href="#staff">
                           <div class="hover-text">
                             <h4>Donna Zerr</h4>
-                            <p>Administrative Staff</p>
+                            <p>Principal</p>
                           </div>
                           <img src="assets/staff/DONNAZERR.jpg" class="img-responsive" alt="Donna Zerr">
                         </a>
